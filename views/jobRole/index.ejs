@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+    <div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1>Job Roles</h1>
+                <p>View All Sunny Rose High School Job Roles</p>
+                <p> 
+                    <a class="btn btn-primary btn-lg" href="/jobroles/new">Add New Job Role</a>
+                </p>
+            </div>
+        </header>
+
+        <ul class="list-group list-group-flush">
+            <% jobRoles.forEach(function(jobRole){ %>
+                <li class="list-group-item">
+                    <img src="https://images.vexels.com/media/users/3/135118/isolated/preview/676bf0e9f3c16649cd7f426c6dcd755a-flat-user-sign-with-round-background-by-vexels.png" width="50px">
+                    <h4 class="inline"><%=jobRole.name%></h4>
+                    <div class="pull-right">
+                        <a class="btn btn-primary" href="/jobroles/<%=jobRole._id%>"> More Info</a>
+                        <a class="btn btn-warning" href="/jobroles/<%=jobRole._id%>/edit">Edit</a>
+                        <a class="btn btn-danger" href="/jobroles/<%=jobRole._id%>/delete">Delete</a>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+<% include ../partials/footer %>

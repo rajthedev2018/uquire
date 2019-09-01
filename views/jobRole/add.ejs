@@ -1,0 +1,9 @@
+<% include ../partials/header.ejs %>
+    <form action="./" method="POST">
+        <% application.appRoles.forEach(function(appRole){ %>
+            <label for="appRole"><%=appRole.name%></label>
+            <input name="approle_id" id="appRole" type="radio" value="<%=appRole._id%>">
+        <% }); %>
+        <button>Submit</button>
+    </form>
+<% include ../partials/footer.ejs %>

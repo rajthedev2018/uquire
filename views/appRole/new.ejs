@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align: center">Add New App Role to <%=application.name%></h1>
+            <div style="width: 30%; margin: 30px auto;">
+                <form action="./" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="appRole[name]" placeholder="Name" required>
+                        <input type="hidden" name="appRole[application]" value=<%=application._id%>>
+                    </div>
+                    <button class="btn btn-large btn-primary">Create</button>
+                    <a class="btn btn-large btn-default inline pull-right" href="/applications/<%=application._id%>">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+<% include ../partials/footer %>

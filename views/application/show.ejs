@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+    <div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1><%=application.name%></h1>
+                <p><%=application.description%></p>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="/applications/<%=application._id%>/approles/new">New App Role</a>
+                    <a class="btn" href="/applications">All Applications</a>
+                </p>
+            </div>
+        </header>
+        <ul class="list-group list-group-flush">
+            <% application.appRoles.forEach(function(appRole){ %>
+                <li class="list-group-item">
+                    <img src="https://www.iconbunny.com/icons/media/catalog/product/1/3/133.12-pen-icon-iconbunny.jpg" width="50px">
+                    <h4 class="inline"><%=appRole.name%></h4>
+                    <div class="pull-right">
+                        <a class="btn btn-primary" href="/applications/<%=application._id%>/approles/<%=appRole._id%>"> More Info</a>
+                        <a class="btn btn-warning" href="/applications/<%=application._id%>/approles/<%=appRole._id%>/edit">Edit</a>
+                        <a class="btn btn-danger" href="/applications/<%=application._id%>/approles/<%=appRole._id%>/delete">Delete</a>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+<% include ../partials/footer %>

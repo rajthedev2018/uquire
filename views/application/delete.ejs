@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+    <div class="container">
+        <div class="row text">
+            <h1 style="text-align: center">Delete <%=application.name%></h1>
+            <div style="width: 30%; margin: 30px auto;">
+                <form action="/applications/<%=application._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-large btn-danger">Delete</button>
+                    <a class="btn btn-large btn-default inline pull-right" href="/applications">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+<% include ../partials/footer %>

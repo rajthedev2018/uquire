@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+    <div class="container">
+        <div class="row text">
+            <h1 style="text-align: center">Remove <%=jobRole.name%> from <%=jobRole.appRoles[0].application.name%> -- <%=jobRole.appRoles[0].name%></h1>
+            <div style="width: 30%; margin: 30px auto;">
+                <form action="./?_method=DELETE" method="POST">
+                    <button class="btn btn-large btn-danger">Remove</button>
+                    <a class="btn btn-large btn-default inline pull-right" href="/jobroles/<%=jobRole._id%>">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+<% include ../partials/footer %>

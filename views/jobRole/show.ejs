@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+    <div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1><%=jobRole.name%></h1>
+                <p>View All App Roles for <%=jobRole.name%></p>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="/jobroles/<%=jobRole._id%>/applications/choose">Add App Role</a>
+                </p>
+            </div>
+        </header>
+
+         <ul class="list-group list-group-flush">
+            <% jobRole.appRoles.forEach(function(appRole){ %>
+                <li class="list-group-item">
+                    <img src="https://images.vexels.com/media/users/3/135118/isolated/preview/676bf0e9f3c16649cd7f426c6dcd755a-flat-user-sign-with-round-background-by-vexels.png" width="50px">
+                    <h4 class="inline"><%=appRole.application.name%></h4>
+                    <h4 class="inline"> -- <%=appRole.name%></h4>
+                    <div class="pull-right">
+                        <a class="btn btn-primary" href="/applications/<%=appRole.application._id%>/approles/<%=appRole._id%>"> More Info</a>
+                        <a class="btn btn-danger" href="/jobroles/<%=jobRole._id%>/applications/<%=appRole.application._id%>/approles/<%=appRole._id%>/remove">Delete</a>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+<% include ../partials/footer %>

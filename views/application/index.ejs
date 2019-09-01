@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+    <div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1>Applications</h1>
+                <p>View All Sunny Rose High School Applications</p>
+                <p> 
+                    <a class="btn btn-primary btn-lg" href="/applications/new">Add New Application</a>
+                </p>
+            </div>
+        </header>
+
+        <ul class="list-group list-group-flush">
+            <% applications.forEach(function(application){ %>
+                <li class="list-group-item">
+                    <img src="https://go.umaine.edu/wp-content/uploads/sites/10/2017/01/UMS-Online-Application-300x300.png" width="50px">
+                    <h4 class="inline"><%=application.name%></h4>
+                    <div class="pull-right">
+                        <a class="btn btn-primary" href="/applications/<%=application._id%>"> More Info</a>
+                        <a class="btn btn-warning" href="/applications/<%=application._id%>/edit">Edit</a>
+                        <a class="btn btn-danger" href="/applications/<%=application._id%>/delete">Delete</a>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+<% include ../partials/footer %>

@@ -1,0 +1,16 @@
+<% include ../partials/header %>
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align: center">Edit <%=jobRole.name%></h1>
+            <div style="width: 30%; margin: 30px auto;">
+                <form action="/jobroles/<%=jobRole._id%>?_method=PUT" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="jobRole[name]" value="<%=jobRole.name%>" required>
+                    </div>
+                    <button class="btn btn-large btn-warning">Edit</button>
+                    <a class="btn btn-large btn-default inline pull-right" href="/jobroles">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+<% include ../partials/footer %>
