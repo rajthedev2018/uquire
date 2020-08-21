@@ -1,3 +1,3 @@
 UQuire Project
 ======================
-by Rajas Gupta aka RajTheDev
+by Rajas Gupta
